@@ -47,51 +47,65 @@
     -->
     <h1>MAP</h1>
     <div id="map"></div>
-    <script>
-      function initMap(){
-        //map options
-        var options = {
-          zoom: 8,
-          center:{lat:-37.78333, lng:175.28333}
-        }
+    <script type="text/javascript" src="map.js">
+      // function initMap(){
+      //   //map options
+      //   var options = {
+      //     zoom: 8,
+      //     center:{lat:-37.78333, lng:175.28333}
+      //   }
+      //   localStorage.removeItem('weather')
+        
+      //   //new map
+      //   var map = new google.maps.Map(document.getElementById('map'), options)
+      //   //addMarker({coords:options.center})
+      //   //listen for click on map
+      //   google.maps.event.addListener(map, 'click', function(event){
+      //     //marker.removeItem(1)
 
-        //new map
-        var map = new google.maps.Map(document.getElementById('map'), options)
+      //     addMarker({coords:event.latLng}); 
+      //     var lat = event.latLng.lat()
+      //     var lon = event.latLng.lng()
+      //     var weather = 'https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat='+lat+'&lon='+lon;
+      //     // localStorage.setItem('weather',JSON.parse(''));
 
-        //listen for click on map
-        google.maps.event.addListener(map, 'click', function(event){
-          addMarker({coords:event.latLng});
-        });
-        /*
-        //add marker
-        var marker = new google.maps.Marker({
-          position:{lat:-37.8110, lng:175.2816},
-          map:map
-        })
-
-        var infoWindow = new google.maps.InfoWindow({
-          content:'<h1>Melville</h1>'
-        })
-
-        marker.addListener('click', function(){
-          infoWindow.open(map,marker);
+      //     var request = new XMLHttpRequest()
+      //     request.open('GET', weather, true);
+      //     request.send();
+      //     console.log(request.responseText);
           
-        })
-        */
-       addMarker({coords:{lat:-37.8110, lng:175.2816}})
-       addMarker({lat:-37.78333, lng:175.28333})
+      //     localStorage.setItem('weather', request.responseText)
 
-        //add marker function
-        function addMarker(props){
-          //add marker
-          var marker = new google.maps.Marker({
-            position:props.coords,
-            map:map
-          })
-        }
+      //   });
+      //   /*
+      //   //add marker
+      //   var marker = new google.maps.Marker({
+      //     position:{lat:-37.8110, lng:175.2816},
+      //     map:map
+      //   })
+
+      //   var infoWindow = new google.maps.InfoWindow({
+      //     content:'<h1>Melville</h1>'
+      //   })
+
+      //   marker.addListener('click', function(){
+      //     infoWindow.open(map,marker);
+          
+      //   })
+      //   */
+      
+
+      //   //add marker function
+      //   function addMarker(props){
+      //     //add marker
+      //     var marker = new google.maps.Marker({
+      //       position:props.coords,
+      //       map:map
+      //     })
+      //   }
 
 
-      }
+      // }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4aogziLEwWIuIuzJ1TQDhtoiWf3ne88s&callback=initMap"
     async defer></script>
